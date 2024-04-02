@@ -17,10 +17,35 @@
 
 const { createApp } = Vue;
 
+
 createApp({
     data(){
         return {
-          
-        };
+            logo: "img/logo.png",
+            todoList: [] ,
+            userInput: "",
+        }
+       
+    },
+    methods: {
+        addNewTask: function() {
+            const todo = {};
+            todo.text = this.userInput.trim();
+            todo.done = false;
+            this.todoList.push(todo);
+            this.userInput = "";
+        },
+
+        removeTask: function(index) {
+            this.todoList.splice(index, 1);
+        },
+
+        isDone: function(index) {
+            if (this.todoList[index].done === false ){
+                this.todoList[index].done = true;
+            } else {
+                this.todoList[index].done = false;
+            };
+        }
     },
 }).mount('#app');

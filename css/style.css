@@ -1,3 +1,15 @@
 header img{
     width: 400px;
 }
+
+i{
+    cursor: pointer;
+}
+
+.overline{
+    text-decoration: line-through;
+}
+
+.pointer{
+    cursor: pointer;
+}
